@@ -1,0 +1,328 @@
+.screen-reader {
+    font-size: 0;
+}
+
+#root {
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+audio,
+video {
+    display: none;
+}
+
+.background {
+    background-image: url("./assets/background.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+.main {
+    background-color: black;
+    height: 100vh;
+    width: 100vw;
+
+    /* Animated prop */
+    opacity: 0;
+}
+
+.loading-intro {
+    background-color: black;
+    height: 100vh;
+    width: 100vw;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 99999999;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.loading-intro .text {
+    color: #9b0404;
+    font-size: 3rem;
+    font-family: "Eater", serif;
+    animation: pulse 2s infinite ease-in-out alternate;
+}
+
+.tress-background-layer {
+    background-image: url("./assets/main-section-bg-layer-0.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+.moon {
+    /* Animating Arc */
+    animation: arc-motion 300s infinite linear;
+    transform-origin: 50% -50px;
+
+    border-radius: 100%;
+    width: 120px;
+    height: 120px;
+    position: fixed;
+    right: 0;
+    top: 0;
+    z-index: 0;
+    margin: 1.5rem;
+    overflow: hidden;
+    padding: 1px;
+    box-sizing: border-box;
+    box-shadow: 10px 0px 105px 80px rgba(255, 255, 255, 0.36);
+    filter: sepia(1);
+}
+
+.fog {
+    position: fixed;
+    /* top: -150px; */
+    left: 0;
+    z-index: 1;
+    width: 100%;
+    height: 45px;
+    box-shadow: 0px 0px 105px 80px rgba(100, 255, 255, 0.5);
+}
+
+.cloud {
+    position: fixed;
+}
+.cloud1 {
+    width: 240px;
+    margin: 12px;
+    right: 0;
+    filter: blur(1.6px);
+}
+.cloud2 {
+    width: 340px;
+    margin-left: 50%;
+    left: -50%;
+    top: 10px;
+    filter: blur(1.3px);
+}
+.cloud3 {
+    width: 193px;
+    right: 10%;
+    filter: blur(1.6px);
+}
+.cloud4 {
+    width: 211px;
+    right: 22%;
+    filter: blur(1.7px);
+    transform: rotate(180deg);
+}
+.cloud9 {
+    width: 140px;
+    margin: 0 -1.8rem;
+    filter: blur(1.8px);
+}
+
+.trees {
+    height: 80vh;
+    width: 100%;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    filter: grayscale(0.35);
+}
+
+.trees-right {
+    position: absolute;
+    left: -5vw;
+    height: 84vh;
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
+}
+.trees-left {
+    position: absolute;
+    left: 62vw;
+    height: 93vh;
+}
+
+.audio-controller {
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+.trees-walls-and-gates {
+    width: 100%;
+    transform: scale(1);
+}
+
+.gates-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100vw;
+    height: 100vh;
+    filter: grayscale(1) sepia(0.3) contrast(2.5);
+}
+
+.gates-left {
+    height: 350px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    right: auto;
+}
+
+.gates-right {
+    height: 350px;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: auto;
+}
+
+.gate-right {
+    right: 0;
+}
+.gate-middle {
+    filter: grayscale(0.9);
+    width: 500px;
+}
+
+.gate-middle-right,
+.gate-middle-left {
+    position: relative;
+    z-index: -1;
+}
+
+.glow-yellow {
+    box-shadow: 0px 0px 105px 48px rgba(206, 255, 10, 0.69);
+}
+.glow-blue {
+    box-shadow: 0px 0px 105px 48px rgba(18, 21, 132, 0.574);
+}
+
+.upper-skies {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: 0;
+    opacity: 0.35;
+    background: rgb(23, 19, 201);
+    background: linear-gradient(
+        180deg,
+        rgba(23, 19, 201, 0.4051995798319328) 0%,
+        rgba(94, 94, 94, 0.9178046218487395) 60%
+    );
+}
+
+.pulse {
+    animation: pulse 3s infinite ease-in-out alternate;
+}
+@keyframes pulse {
+    from {
+        transform: scale(0.8);
+    }
+    to {
+        transform: scale(1.1);
+    }
+}
+
+.ReactModal__Content--after-open {
+    transform: translate(-50%, 60%);
+    animation: reveal-up 5s ease-in-out alternate;
+}
+@keyframes reveal-up {
+    from {
+        transform: translate(-50%, 60%);
+    }
+    to {
+        transform: translate(-50%, -50%);
+    }
+}
+
+.welcome-message {
+    display: block;
+    width: 100%;
+    height: 100vh;
+    font-size: 4rem;
+    max-width: 500px;
+    margin: 0 auto;
+    padding-top: 3.2%;
+    font-family: "Eater", serif;
+    color: #9b0404;
+}
+
+h1,
+h2,
+h3 {
+    color: white;
+    margin: 0;
+}
+
+@keyframes arc-motion {
+    from {
+        transform: translateY(80px) translateX(50px) rotate(0deg);
+    }
+    to {
+        transform: translateY(90px) translateX(-100vw) rotate(-360deg);
+    }
+}
+
+@keyframes arc-motion-witch {
+    from {
+        transform: translateY(80px) translateX(50px) rotate(-15deg);
+    }
+    to {
+        transform: translateY(90px) translateX(-100vw) rotate(15deg);
+    }
+}
+
+.flying-witch-graphics {
+    background-image: url("./assets/witch-witchcraft.gif");
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 200px;
+    height: 200px;
+    position: fixed;
+    right: 0;
+    bottom: 50%;
+    z-index: 1000000000;
+    animation: arc-motion-witch 3s;
+    animation-iteration-count: infinite;
+}
+
+.in-front-bat-graphics {
+    background-image: url("./assets/in-front-bat.gif");
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 200px;
+    height: 200px;
+    position: fixed;
+    right: 0;
+    bottom: 50%;
+    z-index: 1000000000;
+    animation: arc-motion-witch 3s;
+    animation-iteration-count: infinite;
+}
+
+.in-front-bat-graphics .main-screen {
+    animation-duration: 10s;
+    top: -10px;
+}

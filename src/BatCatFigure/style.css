@@ -1,0 +1,287 @@
+:root {
+    --gray: #1a191a;
+    --black: #080708;
+    --dark: #443847;
+    --window: #ffc800cf;
+    --window: #ff8d00cf;
+    --house: #000000;
+    --bat: #070707;
+    --bounce: linear(
+        0 0%,
+        0 2.27%,
+        0.02 4.53%,
+        0.04 6.8%,
+        0.06 9.07%,
+        0.1 11.33%,
+        0.14 13.6%,
+        0.25 18.15%,
+        0.39 22.7%,
+        0.56 27.25%,
+        0.77 31.8%,
+        1 36.35%,
+        0.89 40.9%,
+        0.85 43.18%,
+        0.81 45.45%,
+        0.79 47.72%,
+        0.77 50%,
+        0.75 52.27%,
+        0.75 54.55%,
+        0.75 56.82%,
+        0.77 59.1%,
+        0.79 61.38%,
+        0.81 63.65%,
+        0.85 65.93%,
+        0.89 68.2%,
+        1 72.7%,
+        0.97 74.98%,
+        0.95 77.25%,
+        0.94 79.53%,
+        0.94 81.8%,
+        0.94 84.08%,
+        0.95 86.35%,
+        0.97 88.63%,
+        1 90.9%,
+        0.99 93.18%,
+        0.98 95.45%,
+        0.99 97.73%,
+        1 100%
+    );
+}
+
+.bat {
+    width: 15vmin;
+    height: 12vmin;
+    bottom: 30vmin;
+    margin-bottom: 0;
+    left: 13.25vmin;
+}
+
+.bat:hover {
+    transition: all 1s linear 0s;
+}
+
+.bat .head {
+    background: radial-gradient(
+        circle at 50% 100%,
+        #fff0 calc(2vmin - 1px),
+        #5558 calc(2vmin + 0px),
+        var(--bat) calc(2vmin + 2px)
+    );
+    width: 6vmin;
+    height: 9.5vmin;
+    left: 4vmin;
+    top: 0.75vmin;
+    border-radius: 50% 50% 50% 50% / 25% 25% 75% 75%;
+    transform: rotate(-173deg);
+}
+
+.bat .head:before,
+.bat .head:after {
+    background: var(--bat);
+    content: "";
+    position: absolute;
+    width: 0.5vmin;
+    height: 2.65vmin;
+    bottom: 5vmin;
+    left: 5.65vmin;
+    border-radius: 100% 100% 100% 0%;
+    transform: rotate(-5deg);
+}
+
+.bat .head:after {
+    left: -0.15vmin;
+    border-radius: 100% 100% 0% 100%;
+    transform: rotate(1deg);
+}
+
+.bat .eyes {
+    width: 100%;
+    height: 2.5vmin;
+    bottom: 2.75vmin;
+    transform: rotate(-5deg);
+}
+
+.bat .eyes:before,
+.bat .eyes:after {
+    content: "";
+    position: absolute;
+    width: 1.35vmin;
+    height: 1.75vmin;
+    background: radial-gradient(
+            ellipse at 38% 48%,
+            #fff0 0.3vmin,
+            var(--window) calc(0.3vmin + 1px)
+        ),
+        radial-gradient(circle at 43% 60%, #fff 10%, #fff0 calc(10% + 1px) 100%);
+    border-radius: 100%;
+    left: 3.25vmin;
+    top: 0.1vmin;
+    animation: eye-blink 7s ease -3.5s infinite;
+}
+
+.bat .eyes:after {
+    width: 1.65vmin;
+    height: 2.25vmin;
+    left: 1.25vmin;
+    transform: rotateY(180deg);
+}
+
+.bat .mouth {
+    background: radial-gradient(
+            ellipse at 42% 26%,
+            pink 0.25vmin,
+            #fff0 calc(0.25vmin + 1px)
+        ),
+        radial-gradient(
+            ellipse at 36% 4%,
+            #c61727 1vmin,
+            #fff0 calc(1vmin + 1px)
+        ),
+        radial-gradient(
+            ellipse at 41% 0%,
+            #c61727 1vmin,
+            #fff0 calc(1vmin + 1px)
+        ),
+        radial-gradient(
+            ellipse at 75% 16%,
+            #c61727 1vmin,
+            #fff0 calc(1vmin + 1px)
+        ),
+        radial-gradient(
+            circle at 50% 6.5vmin,
+            #fff0 4vmin,
+            #400000 calc(4vmin + 1px)
+        );
+    width: 4.5vmin;
+    height: 3vmin;
+    left: 0.65vmin;
+    top: 0.75vmin;
+    border-radius: 10vmin 10vmin 0 0;
+}
+
+.bat .mouth:before,
+.bat .mouth:after {
+    content: "";
+    position: absolute;
+    width: 1vmin;
+    height: 2.4vmin;
+    background: conic-gradient(
+        from 160deg,
+        #fff0,
+        #fff 5deg 35deg,
+        #fff0 40deg 100%
+    );
+    top: 0.1vmin;
+    left: 0.75vmin;
+    transform: rotate(-10deg);
+}
+
+.bat .mouth:after {
+    top: 0.2vmin;
+    left: 3.1vmin;
+    transform: rotate(13deg);
+}
+
+.bat .legs {
+    width: 7vmin;
+    height: 3vmin;
+    bottom: 0.1vmin;
+    left: 2.65vmin;
+}
+
+.bat .leg {
+    background: var(--bat);
+    width: 0.65vmin;
+    height: 2.25vmin;
+    transform: rotate(50deg);
+    left: 0.75vmin;
+    top: -0.25vmin;
+    border-radius: 0 0 2vmin 2vmin;
+    box-shadow: 0.15vmin -0.5vmin 0 0 var(--bat),
+        -0.15vmin -0.5vmin 0 0 var(--bat);
+}
+
+.bat .leg:before,
+.bat .leg:after {
+    content: "";
+    position: absolute;
+    background: var(--bat);
+    width: 0.5vmin;
+    height: 1.25vmin;
+    transform: rotate(-55deg);
+    left: 0.45vmin;
+    top: 0.65vmin;
+    border-radius: 0 0 2vmin 2vmin;
+}
+
+.bat .leg:after {
+    transform: rotate(55deg);
+    left: -0.35vmin;
+    top: 0.5vmin;
+}
+
+.bat .leg + .leg {
+    left: 5.5vmin;
+    top: 0.75vmin;
+    transform: rotate(-25deg);
+}
+
+.bat .wings {
+    width: 100%;
+    height: 65%;
+    z-index: -1;
+}
+
+.bat .wings:before,
+.bat .wings:after {
+    content: "";
+    position: absolute;
+    width: 30%;
+    height: 70%;
+    background: radial-gradient(
+            circle at -2.2vmin 2.2vmin,
+            #fff0 3vmin,
+            var(--bat) calc(3vmin + 1px)
+        ),
+        radial-gradient(
+            circle at -1.25vmin 2.35vmin,
+            #fff0 3vmin,
+            var(--bat) calc(3vmin + 1px)
+        );
+    bottom: 2.5vmin;
+    left: 1vmin;
+    transform-origin: 100% 100%;
+    transform: rotate(-150deg); /*-15*/
+    border-radius: 0 3.55vmin 0 0;
+    background-repeat: no-repeat;
+    background-size: 100% 3.2vmin, 100% 2.5vmin;
+    background-position: 0 0, 0 3vmin;
+}
+
+@keyframes bat-fly-r {
+    0%,
+    100% {
+        transform: rotate(-15deg);
+    }
+    50% {
+        transform: rotate(-50deg);
+    }
+}
+@keyframes bat-fly-l {
+    0%,
+    100% {
+        transform: rotate(33deg) rotateY(180deg);
+    }
+    50% {
+        transform: rotate(63deg) rotateY(180deg);
+    }
+}
+
+.bat .wings:after {
+    bottom: 2.65vmin;
+    left: 3.75vmin;
+    top: 0.25vmin;
+    transform-origin: 100% 100%;
+    transform: rotate(170deg) rotateY(180deg);
+    animation-delay: -0.05s;
+}

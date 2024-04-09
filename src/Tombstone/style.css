@@ -1,0 +1,184 @@
+.tombstone-wrapper {
+    width: 360px;
+    height: 320px;
+    cursor: pointer;
+    position: relative;
+    z-index: 111;
+    border-radius: 100%;
+    display: flex;
+    align-items: center;
+    justify-items: center;
+}
+.tombstone-wrapper > .shadow {
+    transition-property: box-shadow;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 250ms;
+    width: 0;
+    height: 220px;
+    position: absolute;
+    left: 180px;
+    top: 0;
+    border-radius: 100%;
+    z-index: -11;
+}
+.tombstone-wrapper:hover > .shadow {
+    box-shadow: 0px 100px 100px 80px rgba(206, 255, 10, 0.39);
+}
+
+.tombstone-wrapper .tombstone-title {
+    position: absolute;
+    top: 140px;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    font-size: 1.8rem;
+    font-weight: bold;
+    line-height: 1.1;
+    max-width: 120px;
+    margin: 0 auto;
+    color: white;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: black;
+}
+
+.tombstone-wrapper img {
+    width: 360px;
+    height: 320px;
+    object-fit: contain;
+}
+
+.tombstone-wrapper:nth-of-type(1) {
+    position: fixed;
+    left: 5%;
+    bottom: 35%;
+    filter: invert(0.06) sepia(0.8);
+    transform: scale(0.88, 0.88)
+        matrix3d(1, 0.1, 0.5, 0.0012, 0.11, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
+}
+
+.tombstone-wrapper:nth-of-type(2) {
+    position: fixed;
+    left: 28%;
+    bottom: 26%;
+    filter: invert(0.17) sepia(0.33);
+    transform: matrix3d(
+            1,
+            0.1,
+            0.5,
+            0.0012,
+            -0.11,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1
+        )
+        scale3d(1, 1, 1);
+}
+
+.tombstone-wrapper:nth-of-type(3) {
+    position: fixed;
+    left: 48%;
+    bottom: 26%;
+    filter: invert(0.22) sepia(0.43);
+    transform: matrix3d(
+            1,
+            0.1,
+            0.5,
+            0.0012,
+            0.11,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1
+        )
+        scale(0.8, 0.8);
+}
+
+.tombstone-wrapper:nth-of-type(4) {
+    position: fixed;
+    left: 68%;
+    bottom: 26%;
+    filter: invert(0.12) sepia(0.19);
+    transform: matrix3d(
+            1,
+            0.1,
+            0.5,
+            0.0012,
+            -0.027,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1
+        )
+        scale(0.8, 0.8);
+}
+
+.modal-close-button {
+    float: right;
+    position: absolute;
+    top: 0;
+    right: 0;
+    border-radius: 100%;
+    width: 45px;
+    height: 45px;
+    line-height: 45px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.8rem;
+    padding: 0;
+    margin: 12px;
+}
+
+.modal-iframe {
+    width: 100%;
+    height: 90%;
+    outline: 0;
+    border: 0;
+    background-color: transparent;
+}
+
+/* .ReactModal__Content--after-open {
+    position: relative;
+}
+
+.modal-decoration-bottom {
+    width: 100%;
+    height: 85px;
+    position: fixed;
+    z-index: 1111;
+    background-color: red;
+} */
+
+.modal-navigate-controls-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.modal-navigate-controls-wrapper button {
+    text-transform: capitalize;
+}

@@ -1,0 +1,71 @@
+.audio-controls-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+.layout-button {
+    background-color: transparent;
+    width: 80px;
+    height: 80px;
+    border-radius: 100%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 10px;
+    transition: 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+.layout-button:hover {
+    transform: scale(1.1);
+}
+
+.layout-button img {
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+}
+
+.mute-indication {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    line-height: 80px;
+    transform: scale(1.5);
+    margin: 0 auto;
+    text-align: center;
+    font-size: 2rem;
+    opacity: 0.7;
+    z-index: 1;
+}
+
+.info-button {
+    position: fixed;
+    top: auto;
+    bottom: 0;
+    left: 0;
+    /* background-image: url("../assets/skeleton-key.png"); */
+    /* background-repeat: no-repeat; */
+    /* background-size: contain; */
+    /* background-position: center; */
+    transform: rotate(-90deg);
+    filter: sepia(1);
+    z-index: 1;
+}
+
+.app-info-content {
+    background-color: blue;
+    border: 1px solid red;
+    color: white;
+    width: 200px;
+    display: block;
+    position: fixed;
+    left: 80px;
+    padding: 0.3rem;
+    border-radius: 12px;
+    z-index: -10;
+}

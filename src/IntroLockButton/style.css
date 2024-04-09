@@ -1,0 +1,17 @@
+.intro-enter-container {
+    position: fixed;
+    bottom: 60px;
+    left: 20px;
+    right: 0;
+    z-index: 1;
+}
+
+.intro-button {
+    border-radius: 100%;
+    background-color: transparent;
+    filter: sepia(0.2);
+}
+
+.intro-button img {
+    filter: sepia(0.8);
+}
