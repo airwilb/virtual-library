@@ -13,7 +13,7 @@ export interface Book {
 
 const handleResponse = (response: Response[]) =>
   response.map(({ url, pathname }) => {
-    const [uid, author, title] = pathname.split("__");
+    const [author, title] = pathname.split("__");
 
     return {
       url,
