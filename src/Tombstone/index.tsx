@@ -23,6 +23,8 @@ export const Tombstone = (
     setIsOpen(false);
   }
 
+  console.log(props);
+
   return (
     <>
       <div
@@ -36,7 +38,7 @@ export const Tombstone = (
         }}
       >
         <div className="shadow" />
-        <div className="tombstone-title">{props.title}</div>
+        <div className="tombstone-title">{props.author}</div>
       </div>
       <Modal
         isOpen={modalIsOpen}
