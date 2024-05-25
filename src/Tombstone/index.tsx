@@ -23,8 +23,6 @@ export const Tombstone = (
     setIsOpen(false);
   }
 
-  console.log(props);
-
   return (
     <>
       <div

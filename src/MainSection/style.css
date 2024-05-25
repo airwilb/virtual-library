@@ -23,3 +23,62 @@
   justify-content: space-around;
   position: relative;
 }
+
+.pagination {
+  position: absolute;
+  bottom: 15%;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 25%;
+  z-index: 1000;
+}
+
+.pagination > button:before {
+  content: "";
+  width: 110px;
+  height: 32px;
+  position: absolute;
+  left: 0;
+  top: -40px;
+  background-image: url(../assets/arrows.jpeg);
+  background-size: 130px;
+  background-position-x: -10px;
+  background-position-y: -40px;
+  filter: invert(1);
+  border-radius: 12px;
+}
+
+.pagination > button {
+  height: 1lh;
+  position: fixed;
+  left: 0;
+  z-index: 10000;
+  background-color: transparent;
+  font-size: 12px;
+  outline: 0;
+  border: 0;
+}
+
+.pagination > button:focus,
+.pagination > button:hover {
+  background-color: transparent;
+  border: 0;
+  outline: 0;
+}
+
+.pagination > .next {
+  right: 0;
+  left: auto;
+}
+
+.pagination > .prev:before {
+  transform: rotate(180deg);
+}
+
+.pagination > .next:before {
+  right: 0;
+  left: auto;
+}

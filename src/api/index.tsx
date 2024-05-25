@@ -1,14 +1,19 @@
 import { useState, useEffect } from "react";
+import { Book } from "../types";
 
 interface Response {
   url: string;
   pathname: string;
 }
 
-export interface Book {
-  url: string;
-  author: string;
-  title: string;
+function chunkArray(array: Book[], chunkSize: number) {
+  const result: Book[][] = [];
+
+  for (let i = 0; i < array.length; i += chunkSize) {
+    result.push(array.slice(i, i + chunkSize));
+  }
+
+  return result;
 }
 
 const handleResponse = (response: Response[]) =>
@@ -23,7 +28,11 @@ const handleResponse = (response: Response[]) =>
   });
 
 export const useBookList = () => {
-  const [bookList, setBookList] = useState<Book[]>([]);
+  const chunkSize = 4;
+
+  const [isLoading, setIsLoading] = useState(true);
+  const [bookList, setBookList] = useState<Book[][]>([]);
+  const [totalPages, setTotalPages] = useState<number>(0);
 
   useEffect(() => {
     (async () => {
@@ -32,9 +41,17 @@ export const useBookList = () => {
       );
 
       const reponse = await request.json();
-      setBookList(handleResponse(reponse.blobs));
+      const booksList = reponse.blobs;
+      const paginatedBooks: Book[][] = chunkArray(
+        handleResponse(booksList),
+        chunkSize
+      );
+
+      setBookList(paginatedBooks);
+      setTotalPages(paginatedBooks.length);
+      setIsLoading(false);
     })();
   }, []);
 
-  return bookList;
+  return { bookList, totalPages, isLoading };
 };
