@@ -65,9 +65,7 @@ function App() {
   };
 
   useEffect(() => {
-    window.addEventListener("load", function () {
-      revealMainContent();
-    });
+    revealMainContent();
   }, []);
 
   return (
